@@ -1,0 +1,74 @@
+@use 'variables' as *;
+
+// mixins for repeated patterns.
+@mixin set-font($size: 2em, $line-height: normal, $font: $fonts-body) {
+  font-family: $font;
+  font-size: $size;
+  line-height: $line-height;
+}
+
+@mixin uppercase($color: $accent1, $background: $accent2) {
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $color;
+  background: $background;
+  padding: 2em;
+}
+
+//atoms
+h2,
+h3,
+h4 {
+  font-family: $fonts-headline;
+  margin: 0;
+}
+h1 {
+  background: $accent1;
+  color: $text-light;
+  display: inline-block;
+  font-weight: normal;
+  margin-bottom: 1em;
+  padding: 0.5em 1em;
+}
+h2 {
+  color: $text-light;
+  font-weight: 900; /* Heavy */
+  font-size: 6em;
+  letter-spacing: 1px;
+  line-height: 1em;
+}
+h3 {
+  color: $text-light;
+  font-size: 2.25em;
+  font-weight: 200; /* Thin */
+  letter-spacing: 1px;
+  line-height: 1em;
+  padding: 0.5em 0 0.25em 0;
+}
+h4 {
+  font-size: 1.5em;
+  font-weight: 200; /* Thin */
+  letter-spacing: 1px;
+  line-height: 1em;
+  margin: 0.5em 0;
+}
+
+p {
+  @include set-font(1em, 1.5em);
+  padding: 0.5em 0;
+  margin: 0;
+  color: $accent2;
+}
+
+ div .summary p{
+  @include uppercase();
+}
+a {
+  color: $accent1;
+  text-decoration: none;
+}
+a:hover {
+ color: $accent2;
+ text-decoration: none;
+}
