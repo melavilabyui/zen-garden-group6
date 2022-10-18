@@ -19,3 +19,34 @@ body {
   margin: 0;
   padding: 1em;
 }
+
+.page-wrapper{
+  display: grid;
+  grid-template-areas: 
+  "header header header"
+  "content content content"
+  "content content content"
+  "content content content"
+   "footer footer footer";
+}
+
+header {
+  grid-area: 
+  "header";
+}
+
+.summary{
+  grid-area: "content";
+}
+
+.preamble{
+    grid-area: "content";
+  }
+
+  .main supporting{
+    grid-area: "content";
+  }
+
+  participation{
+    grid-area: "content";
+  }
