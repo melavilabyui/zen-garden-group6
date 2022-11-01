@@ -1,3 +1,23 @@
 .intro {
   padding: 5%;
 }
+.page-wrapper{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: 
+    "header   header"
+    "main     sidebar"
+    "footer   footer";
+}
+header, .preamble{
+    grid-area: header;
+}
+.sidebar{
+    grid-area: sidebar;
+}
+#zen-supporting{
+    grid-area: main;
+}
+footer{
+    grid-area: footer;
+}
