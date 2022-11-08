@@ -1,2 +1,62 @@
 @use 'variables' as *;
 @use 'atoms';
+
+@use 'variables' as *;
+@use 'atoms';
+
+header{
+    grid-area: hd;
+  }
+  @media only screen and (min-width: 800px){
+  #zen-supporting{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "enlight  what          quote"
+    "benefits participation participation"
+    "require  require       sidebar";
+    grid-gap: 2em;
+  }
+
+  footer{
+    grid-area: footer;
+  }
+  
+  .participation{
+    grid-area: participation;
+  }
+  
+  .benefits{
+    grid-area: benefits;
+  }
+  
+  .requirements{
+    grid-area: require;
+  }
+  
+  .explanation{
+    grid-area: what;
+  }
+  
+  .summary{
+    grid-area: quote;
+  }
+  
+  .preamble{
+    grid-area: enlight;
+  }
+
+  .sidebar{
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: row;
+  }
+@keyframes spacingtitle {
+  50% {letter-spacing: 30px;}
+}
+  h2{
+    animation: spacingtitle 5s infinite;
+  }
+}
+
