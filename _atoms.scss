@@ -78,6 +78,7 @@ p {
 
  div .summary p{
   @include uppercase();
+  background-image: url("dark star.png");
 }
 a {
   color: $accent1;
