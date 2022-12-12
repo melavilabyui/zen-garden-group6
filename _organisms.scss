@@ -1,0 +1,115 @@
+@use 'variables' as *;
+.intro {
+  padding: 5%;
+}
+body{
+  display: grid;
+  grid-template-areas: 
+  "sidebar"
+  "page-wrapper"
+  "main-supporting";
+}  
+@media only screen and (min-width: 1201px){
+
+.page-wrapper{
+  grid-area: page-wrapper;
+    padding: 4%;
+    display: grid;
+    grid-template-areas: 
+    "hd"
+    "article";
+  }}
+
+@media only screen and (max-width: 1200px){
+  body{
+    margin-right: 40px;
+    display: grid;
+    grid-template-columns: 40px auto;
+    grid-template-areas: 
+    "sidebar page-wrapper"
+    "sidebar main-supporting";
+  }
+  .page-wrapper{
+    grid-area: page-wrapper;
+  }
+  .sidebar {
+    margin-top: 275px;
+    grid-area: sidebar;
+    align-self: start;
+    font-size: 0.75em;
+}
+
+.select, .archives, .resources{
+writing-mode: vertical-lr;
+text-orientation: upright;
+}
+
+.design-selection nav, .design-archives nav, .zen-resources ul{
+  display: none;
+  position: absolute;
+  background: $background-color;
+  z-index: 1;
+}
+.design-selection:hover nav,  .design-archives:hover nav, .zen-resources:hover ul{
+  display: block;
+  float: right;
+  
+}
+ .wrapper{
+  display: flex;
+  flex-direction: column;
+
+ }
+ .design-selection{grid-area: design;}
+ .design-archives{grid-area: archives;}
+ .zen-resources{grid-area: resources;}
+  #zen-supporting{
+    grid-area: main-supporting;
+    padding-right: 50px;
+  }
+  .explanationSpec{
+    display: flex;
+    flex-direction: column;}
+
+  img{
+    width: 400px;
+    height: 250px;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto; 
+  }
+  footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 1.5em;
+    grid-area: footer;
+  }
+  h1{
+  animation: movezen 5s infinite;}
+
+  h2{
+    font-size: 3em;
+    margin-bottom: 1em;
+  }
+  p{
+    padding: 1.2em;
+    line-height: 1.7em;
+  }
+  h3{
+    font-size: 1.75em;
+    text-align: center;
+    line-height: 1.2em;
+  }
+  .requirements{
+    background-image: linear-gradient(135deg, $primary, $accent1, $background-color, $accent1, $primary, $accent2);
+  }
+  .page-wrapper> div{
+    margin-bottom: 2em;
+  }
+  .summary{
+    margin-left: auto;
+    margin-right: auto;
+  margin-bottom: 2em;}
+
+}

@@ -1,0 +1,145 @@
+@use 'variables' as *;
+@use 'atoms';
+
+header{
+    grid-area: hd;
+  }
+
+  @media only screen and (min-width: 800px){
+  #zen-supporting{
+    margin: 5em;
+    grid-area: main-supporting;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "what     what          what"
+    "benefits participation participation"
+    "require  require       require"
+    "footer   footer        footer";
+    grid-gap: 5em;
+  }
+  
+.article{
+  grid-area: article;
+  grid-gap: 5em;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 15px;
+  margin-top: 8em;
+  grid-template-areas: 
+  "summary preamble";
+}
+
+  .preamble{
+    grid-area: preamble;
+    margin-left: 20px;
+  }
+
+  .explanation{
+    grid-area: what;
+    margin-top: -10em;
+  
+  }
+
+  .explanationSpec{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .summary{
+    grid-area: summary;
+    display: block;
+    text-align: center;
+    margin-bottom: 1em;
+    border-radius: 20px;
+  }
+  
+  footer{
+    margin-top: 3em;
+    grid-area: footer;
+    justify-self: center;
+  }
+  footer a{
+    padding: 3em;
+  }
+  
+  .benefits{
+    grid-area: benefits;
+    background-image: url("mixed planet render (1).png");
+    border-radius: 20px;
+    h3{
+      padding: 1em 1em 0;
+    }
+    p{
+      margin:1.5em;
+    }
+  }
+
+  .participation{
+    grid-area: participation;
+  }
+  
+  .requirements{
+    grid-area: require;
+  }
+  .sidebar{
+    justify-self: right;
+    grid-area: sidebar;
+    color: $accent1;
+    a:hover{
+      color: $accent2;
+    }  
+  }
+@keyframes spacingtitle {
+0% {
+    letter-spacing: 2px;
+}
+50% {
+    letter-spacing: 15px;
+}
+100% {
+    letter-spacing: 2px;
+}
+}
+  h2{
+    animation: spacingtitle 5s infinite;
+  }
+}
+//Dropdown menu bar
+.wrapper{ 
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+li{
+  margin-left: -3em;
+  text-decoration: none;
+  line-height: 50px;
+  border-bottom: 1px solid #2E4271;
+  display: block;
+}
+li a{
+  padding: 12px 16px;
+  text-decoration: none;
+}
+nav{
+  display: none;
+}
+.select, .archives, .resources{
+  font-size: 1.5em;
+  position: relative;
+  display: inline-block;
+  padding-right: 3em;
+  cursor: pointer;
+}
+.design-selection nav, .design-archives nav, .zen-resources ul{
+  display: none;
+  position: absolute;
+  background: $background-color;
+  z-index: 1;
+}
+
+.design-selection:hover nav,  .design-archives:hover nav, .zen-resources:hover ul{
+  display: block; 
+}//ends here.
